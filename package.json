@@ -6,7 +6,7 @@
     "test": "cypress run",
     "test:headed": "cypress open",
       "test:ci": "cypress run --browser chrome --reporter mochawesome --reporter-options reportDir=cypress/reports,overwrite=false,html=true,json=true",
-      "merge:reports": "mochawesome-merge cypress/reports/mochawesome*.json > cypress/reports/mochawesome.json && marge cypress/reports/mochawesome.json -f report -o cypress/reports/",
+  "merge:reports": "node scripts/mergeReports.js",
     "lint": "eslint . --ext .ts,.js"
   },
   "devDependencies": {

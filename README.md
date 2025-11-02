@@ -1,7 +1,7 @@
-# Projeto de Testes — AutomationExercise (Cypress + TypeScript)
+# Projeto de Testes — AutomationExercise (Cypress)
 
 Este repositório contém uma suíte de testes automatizados para a aplicação demo "Automation Exercise".
-Os testes foram implementados com Cypress + TypeScript usando o padrão Page Object. A biblioteca `@faker-js/faker` é utilizada para gerar dados únicos em cadastros.
+Os testes foram implementados com Cypress usando o padrão Page Object. A biblioteca `@faker-js/faker` é utilizada para gerar dados únicos em cadastros.
 
 ## O que há aqui
 - Testes automatizados para os Test Cases: 1, 2, 3, 4, 5, 6, 8, 9, 10 e 15.
@@ -103,7 +103,7 @@ Remove-Item -Recurse -Force .\package-for-delivery
 ```
 
 ## Notas e dicas
-- Alguns avisos do TypeScript/Cypress podem aparecer (por exemplo: "Missing baseUrl in compilerOptions"). Eles não impedem a execução dos testes, mas você pode ajustar `tsconfig.json` se desejar silenciá-los.
+- Alguns avisos do Cypress podem aparecer (por exemplo: "Missing baseUrl in compilerOptions"). Eles não impedem a execução dos testes, mas você pode ajustar `tsconfig.json` se desejar silenciá-los.
 - Para tornar os testes mais resilientes:
   - Preferir seletores por texto ou `data-qa` quando disponíveis.
   - Evitar clicar em seletores que retornam múltiplos elementos; usar `.first()` ou selecionar pelo link de detalhe do produto.
@@ -119,10 +119,3 @@ Remove-Item -Recurse -Force .\package-for-delivery
 - Incrementar o workflow com upload para um relatório centralizado ou badge de status.
 
 ---
-
-Se quiser, eu posso:
-- Ajustar o README com mais detalhes (ex.: exemplos de seletores, mapa dos Page Objects);
-- Criar um `CONTRIBUTING.md` e `CHANGELOG.md`;
-- Gerar um badge do GitHub Actions no README após o primeiro push que dispare o workflow.
-
-Diga qual próximo item prefere que eu faça.

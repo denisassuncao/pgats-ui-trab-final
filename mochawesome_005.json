@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:37:20.051Z",
-    "end": "2025-11-02T21:37:24.695Z",
-    "duration": 4644,
+    "start": "2025-11-02T22:03:48.889Z",
+    "end": "2025-11-02T22:03:53.653Z",
+    "duration": 4764,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d2455910-5b79-4a22-9842-1dc0e5794828",
+      "uuid": "a0d6474d-1c08-480a-a0ce-68bbf32f0cdd",
       "title": "",
       "fullFile": "cypress/e2e/tc06_contact.cy.ts",
       "file": "cypress/e2e/tc06_contact.cy.ts",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "700f57cc-4454-4a20-af74-61c6313bf91c",
-          "title": "TC06 - Contact Us form",
+          "uuid": "a4dd8e37-9772-4c49-a95a-b20011ac3b9d",
+          "title": "TC06 - Formulário de contato",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,9 +36,9 @@
           "tests": [
             {
               "title": "deve enviar o formulário de contato com sucesso",
-              "fullTitle": "TC06 - Contact Us form deve enviar o formulário de contato com sucesso",
+              "fullTitle": "TC06 - Formulário de contato deve enviar o formulário de contato com sucesso",
               "timedOut": null,
-              "duration": 4612,
+              "duration": 4752,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const contact = new contactPage_1.ContactPage();\nconst email = faker_1.faker.internet.email();\ncontact.visit();\n// Preencher e submeter\ncontact.submitContact('Contato Teste', email, 'Assunto teste', 'Mensagem de teste via Cypress');\n// Verificar mensagem de sucesso\ncy.contains('Success! Your details have been submitted successfully.').should('be.visible');\n// Voltar à home — usar link para a raiz do site\ncy.get('a[href=\"/\"]').first().click({ force: true });",
               "err": {},
-              "uuid": "962f6f6d-4009-482e-8bdc-d135598e32c2",
-              "parentUUID": "700f57cc-4454-4a20-af74-61c6313bf91c",
+              "uuid": "708134dc-11b7-41ee-b72a-d4ecf7adea4d",
+              "parentUUID": "a4dd8e37-9772-4c49-a95a-b20011ac3b9d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "962f6f6d-4009-482e-8bdc-d135598e32c2"
+            "708134dc-11b7-41ee-b72a-d4ecf7adea4d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4612,
+          "duration": 4752,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

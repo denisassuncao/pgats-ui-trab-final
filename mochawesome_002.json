@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:36:30.789Z",
-    "end": "2025-11-02T21:36:33.080Z",
-    "duration": 2291,
+    "start": "2025-11-02T22:02:57.561Z",
+    "end": "2025-11-02T22:03:00.200Z",
+    "duration": 2639,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "9ef10abd-4a8d-4e4c-9724-d21fedf11ebf",
+      "uuid": "73f4e10a-9273-428c-a0b6-5464449a5faf",
       "title": "",
       "fullFile": "cypress/e2e/tc03_login_fail.cy.ts",
       "file": "cypress/e2e/tc03_login_fail.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b726d43c-42d1-4d26-8806-2238fa1b297d",
+          "uuid": "9016bfe5-3455-46e2-acec-5f3996e07d6c",
           "title": "TC03 - Login com credenciais incorretas",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "não deve permitir login com senha incorreta",
               "fullTitle": "TC03 - Login com credenciais incorretas não deve permitir login com senha incorreta",
               "timedOut": null,
-              "duration": 2237,
+              "duration": 2596,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const login = new loginPage_1.LoginPage();\nconst fakeEmail = faker_1.faker.internet.email();\nlogin.visit();\nlogin.login(fakeEmail, 'senhaErrada');\n// Verifica mensagem de erro apropriada\ncy.contains('Your email or password is incorrect!').should('exist');",
               "err": {},
-              "uuid": "4a0643dd-f60b-461f-9938-f92f7999c930",
-              "parentUUID": "b726d43c-42d1-4d26-8806-2238fa1b297d",
+              "uuid": "951f6ec1-4ad5-4364-988c-a294ad87e3ac",
+              "parentUUID": "9016bfe5-3455-46e2-acec-5f3996e07d6c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4a0643dd-f60b-461f-9938-f92f7999c930"
+            "951f6ec1-4ad5-4364-988c-a294ad87e3ac"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2237,
+          "duration": 2596,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

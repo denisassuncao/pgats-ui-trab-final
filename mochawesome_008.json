@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:37:45.166Z",
-    "end": "2025-11-02T21:37:47.566Z",
-    "duration": 2400,
+    "start": "2025-11-02T22:04:14.610Z",
+    "end": "2025-11-02T22:04:17.145Z",
+    "duration": 2535,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e1a970ce-e333-4de5-8fce-0bb46eeb02a4",
+      "uuid": "7f2b1e9c-5fd2-4f1b-aa74-5e313ecd2849",
       "title": "",
       "fullFile": "cypress/e2e/tc10_subscribe.cy.ts",
       "file": "cypress/e2e/tc10_subscribe.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5e2fb290-1c19-46a3-936c-c1a3512b67ea",
+          "uuid": "94bd7235-5c12-4811-87b4-185d0c884fbb",
           "title": "TC10 - Assinatura na home",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "deve permitir assinar a newsletter na home",
               "fullTitle": "TC10 - Assinatura na home deve permitir assinar a newsletter na home",
               "timedOut": null,
-              "duration": 2343,
+              "duration": 2501,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit('/');\nconst email = faker_1.faker.internet.email();\n// rolar até o footer onde está o campo de assinatura e usar seletores flexíveis\ncy.get('footer').scrollIntoView();\ncy.get('footer').within(() => {\n    // tentar diferentes seletores de input de email\n    cy.get('input[type=\"email\"], input[name*=\"email\"], input#susbscribe_email, input#subscribe').first().type(email);\n    // clicar no botão de subscribe pelo texto\n    cy.contains(/subscribe/i).click({ force: true });\n});\n// Verificar mensagem de sucesso (texto pode variar). O container pode\n// inicialmente estar oculto; checamos existência e conteúdo textual.\ncy.get('#success-subscribe, .alert-success', { timeout: 10000 })\n    .should('exist')\n    .invoke('text')\n    .then(text => {\n    const lower = (text || '').toLowerCase();\n    expect(lower).to.satisfy(t => t.includes('success') || t.includes('subscribed') || t.includes('thank'));\n});",
+              "code": "cy.visit('/');\nconst email = faker_1.faker.internet.email();\n// rolar até o footer onde está o campo de assinatura e usar seletores flexíveis\ncy.get('footer').scrollIntoView();\ncy.get('footer').within(() => {\n    // tentar diferentes seletores de input de email\n    cy.get('input[type=\"email\"], input[name*=\"email\"], input#susbscribe_email, input#subscribe').first().type(email);\n    // clicar no botão de subscribe pelo texto\n    cy.contains(/subscribe/i).click({ force: true });\n});\n// Verificar mensagem de sucesso.\ncy.get('#success-subscribe, .alert-success', { timeout: 10000 })\n    .should('exist')\n    .invoke('text')\n    .then(text => {\n    const lower = (text || '').toLowerCase();\n    expect(lower).to.satisfy(t => t.includes('success') || t.includes('subscribed') || t.includes('thank'));\n});",
               "err": {},
-              "uuid": "20e60d52-2640-4fb5-8081-dad37d3238eb",
-              "parentUUID": "5e2fb290-1c19-46a3-936c-c1a3512b67ea",
+              "uuid": "be8ea77d-389d-40a8-b1e0-c05b86fda803",
+              "parentUUID": "94bd7235-5c12-4811-87b4-185d0c884fbb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "20e60d52-2640-4fb5-8081-dad37d3238eb"
+            "be8ea77d-389d-40a8-b1e0-c05b86fda803"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2343,
+          "duration": 2501,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:37:28.709Z",
-    "end": "2025-11-02T21:37:30.456Z",
-    "duration": 1747,
+    "start": "2025-11-02T22:03:57.594Z",
+    "end": "2025-11-02T22:03:59.720Z",
+    "duration": 2126,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f9f7b530-f180-4bb7-87bf-cc89284128a9",
+      "uuid": "25479726-7fd5-420b-8a7b-7d14bbf7f388",
       "title": "",
       "fullFile": "cypress/e2e/tc08_products.cy.ts",
       "file": "cypress/e2e/tc08_products.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "bacc2bee-1190-4e70-a9e6-9f4ecb219b4b",
+          "uuid": "8ad5e23b-3bb1-4fe7-8a9e-5acdddb574e0",
           "title": "TC08 - Lista de produtos e detalhes",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "deve listar produtos e abrir detalhe do primeiro",
               "fullTitle": "TC08 - Lista de produtos e detalhes deve listar produtos e abrir detalhe do primeiro",
               "timedOut": null,
-              "duration": 1705,
+              "duration": 2106,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\nproducts.assertProductListVisible();\n// Abrir detalhes do primeiro produto\n// Observação: dependendo do overlay do site, o clique força interação\ncy.get('.product-image-wrapper').first().within(() => {\n    cy.contains('View Product').click({ force: true });\n});\n// Verificar que a página de detalhes mostra informações do produto\ncy.get('.product-information').should('be.visible');",
+              "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\nproducts.assertProductListVisible();\n// Abrir detalhes do primeiro produto\ncy.get('.product-image-wrapper').first().within(() => {\n    cy.contains('View Product').click({ force: true });\n});\n// Verificar que a página de detalhes mostra informações do produto\ncy.get('.product-information').should('be.visible');",
               "err": {},
-              "uuid": "aae0d67d-4440-464c-931d-f4ab4181a8b7",
-              "parentUUID": "bacc2bee-1190-4e70-a9e6-9f4ecb219b4b",
+              "uuid": "7d6ea8f5-baf5-4759-9d3c-b1398a4a2ed4",
+              "parentUUID": "8ad5e23b-3bb1-4fe7-8a9e-5acdddb574e0",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "aae0d67d-4440-464c-931d-f4ab4181a8b7"
+            "7d6ea8f5-baf5-4759-9d3c-b1398a4a2ed4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1705,
+          "duration": 2106,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

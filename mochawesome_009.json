@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:37:56.969Z",
-    "end": "2025-11-02T21:38:08.901Z",
-    "duration": 11932,
+    "start": "2025-11-02T22:04:26.903Z",
+    "end": "2025-11-02T22:04:38.999Z",
+    "duration": 12096,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d89204fc-a380-4cc9-9905-9cfb8b8d6d8c",
+      "uuid": "ad429280-6a35-4055-b573-78f00cfcb5c2",
       "title": "",
       "fullFile": "cypress/e2e/tc15_place_order.cy.ts",
       "file": "cypress/e2e/tc15_place_order.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f7f7ce1c-3dff-4c5a-8dde-87adab7fa943",
+          "uuid": "c4c33170-4974-457d-a727-5323e3af09a2",
           "title": "TC15 - Fazer pedido com registro prévio",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "deve permitir registrar, adicionar produto e prosseguir para checkout",
               "fullTitle": "TC15 - Fazer pedido com registro prévio deve permitir registrar, adicionar produto e prosseguir para checkout",
               "timedOut": null,
-              "duration": 11868,
+              "duration": 12034,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "const products = new productsPage_1.ProductsPage();\nconst signup = new signupPage_1.SignupPage();\nconst cart = new cartPage_1.CartPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário\nsignup.visit();\nsignup.startSignup('Usuario Pedido', email);\nsignup.fillAccountInformation(password);\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Ir para produtos e abrir a página de detalhe do primeiro produto\nproducts.visit();\n// abrir detalhes do primeiro produto (View Product) para então adicionar ao carrinho de forma unívoca\n// tentar obter o href do link de detalhe e visitar diretamente para evitar problemas de overlay/múltiplos elementos\ncy.get('.product-image-wrapper, .single-products').first().then(($card) => {\n    const href = $card.find('a[href*=\"/product_details/\"]').attr('href');\n    if (href) {\n        // navegar diretamente para a página de detalhe do produto\n        cy.visit(href);\n    }\n    else {\n        // fallback: clicar no primeiro link de detalhe disponível\n        cy.get('a[href*=\"/product_details/\"]').first().click({ force: true });\n    }\n});\n// Na página de detalhe do produto, clicar em Add to cart (único botão nessa página)\n// Aguardar até o botão estar visível, então clicar no primeiro que encontrar\ncy.wait(1000); // dar tempo para a página carregar\ncy.contains(/add to cart/i).should('be.visible').first().click({ force: true });\n// Aguardar o modal de sucesso e então ir para o carrinho\ncy.contains(/added!/i).should('be.visible');\ncy.wait(500); // aguardar animação\n// Visualizar carrinho e proceder\ncy.contains('View Cart').should('be.visible').first().click({ force: true });\ncart.proceedToCheckout();\n// Verifica que chegou à página de checkout (pode pedir confirmação de endereço)\ncy.contains('Address Details').should('be.visible');",
+              "code": "const products = new productsPage_1.ProductsPage();\nconst signup = new signupPage_1.SignupPage();\nconst cart = new cartPage_1.CartPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário\nsignup.visit();\nsignup.startSignup('Usuario Pedido', email);\nsignup.fillAccountInformation(password);\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Ir para produtos e abrir a página de detalhe do primeiro produto\nproducts.visit();\n// abrir detalhes do primeiro produto (View Product) para então adicionar ao carrinho de forma unívoca\ncy.get('.product-image-wrapper, .single-products').first().then(($card) => {\n    const href = $card.find('a[href*=\"/product_details/\"]').attr('href');\n    if (href) {\n        // navegar diretamente para a página de detalhe do produto\n        cy.visit(href);\n    }\n    else {\n        // fallback: clicar no primeiro link de detalhe disponível\n        cy.get('a[href*=\"/product_details/\"]').first().click({ force: true });\n    }\n});\n// Na página de detalhe do produto, clicar em Add to cart\ncy.wait(1000); // dar tempo para a página carregar\ncy.contains(/add to cart/i).should('be.visible').first().click({ force: true });\n// Aguardar o modal de sucesso e então ir para o carrinho\ncy.contains(/added!/i).should('be.visible');\ncy.wait(500); // aguardar animação\n// Visualizar carrinho e proceder\ncy.contains('View Cart').should('be.visible').first().click({ force: true });\ncart.proceedToCheckout();\n// Verifica que chegou à página de checkout (pode pedir confirmação de endereço)\ncy.contains('Address Details').should('be.visible');",
               "err": {},
-              "uuid": "0a520f59-eb29-42cf-bb69-d6f2abe8b12b",
-              "parentUUID": "f7f7ce1c-3dff-4c5a-8dde-87adab7fa943",
+              "uuid": "0ffd40f0-1f6a-49ef-a0b2-e42749086d80",
+              "parentUUID": "c4c33170-4974-457d-a727-5323e3af09a2",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0a520f59-eb29-42cf-bb69-d6f2abe8b12b"
+            "0ffd40f0-1f6a-49ef-a0b2-e42749086d80"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11868,
+          "duration": 12034,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -8,7 +8,6 @@ describe('TC08 - Lista de produtos e detalhes', () => {
     products.assertProductListVisible()
 
     // Abrir detalhes do primeiro produto
-    // Observação: dependendo do overlay do site, o clique força interação
     cy.get('.product-image-wrapper').first().within(() => {
       cy.contains('View Product').click({ force: true })
     })

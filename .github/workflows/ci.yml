@@ -34,34 +34,34 @@ jobs:
       - name: Validar e mesclar relatórios Mochawesome (somente se existirem JSONs válidos)
         if: always()
         run: |
-          echo "Checking for mochawesome JSON reports..."
+          echo "Verificando relatórios JSON do Mochawesome..."
           set -e
-          # if reports dir doesn't exist, skip
+          # se o diretório reports não existir, pula a mesclagem
           if [ ! -d cypress/reports ]; then
-            echo "No cypress/reports directory — skipping merge."
+            echo "Diretório cypress/reports não encontrado — ignorando mesclagem."
             exit 0
           fi
-          # list files
+          # listar arquivos
           ls -la cypress/reports || true
 
-          # run a small Node.js script to validate each JSON; invalid files will be renamed to *.INVALID
+          # executa um pequeno script Node.js para validar cada JSON; arquivos inválidos serão renomeados para *.INVALID
           node -e "const fs=require('fs'); const path=require('path'); const dir=path.join(process.cwd(),'cypress','reports'); const files=fs.readdirSync(dir).filter(f=>f.match(/^mochawesome.*\.json$/)); if(files.length===0){console.log('No mochawesome JSON files found'); process.exit(0);} files.forEach(f=>{const p=path.join(dir,f); try{const s=fs.readFileSync(p,'utf8'); if(!s.trim()){throw new Error('empty');} JSON.parse(s);}catch(e){console.error('Invalid JSON in',p,':',e.message); fs.renameSync(p,p+'.INVALID');}});"
 
-          # check again if there are valid files
+          # verificar novamente se existem arquivos válidos
           shopt -s nullglob || true
           valid=(cypress/reports/mochawesome*.json)
           if [ -e "${valid[0]}" ]; then
-            echo "Valid mochawesome JSON files present, merging..."
+            echo "Arquivos JSON válidos do Mochawesome encontrados, mesclando..."
             npm run merge:reports
           else
-            echo "No valid mochawesome JSON files to merge — skipping merge."
+            echo "Nenhum arquivo JSON válido do Mochawesome para mesclar — ignorando mesclagem."
           fi
 
       - name: Enviar artefatos de teste
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: resultados-de-teste
           path: |
             cypress/reports/
             cypress/screenshots/

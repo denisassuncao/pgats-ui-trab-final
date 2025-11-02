@@ -2,8 +2,8 @@ import { faker } from '@faker-js/faker'
 import { SignupPage } from '../pages/signupPage'
 
 // TC04: Fazer logout do usuário
-describe('TC04 - Logout', () => {
-  it('deve logout corretamente após login', () => {
+describe('TC04 - Logout do usuário', () => {
+  it('deve realizar logout corretamente após login', () => {
     // Reaproveitamos o Page Object para registro + logout
     const signup = new SignupPage()
     const email = faker.internet.email()

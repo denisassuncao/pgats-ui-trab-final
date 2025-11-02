@@ -2,7 +2,7 @@ import { ContactPage } from '../pages/contactPage'
 import { faker } from '@faker-js/faker'
 
 // TC06: Formulário de contato
-describe('TC06 - Contact Us form', () => {
+describe('TC06 - Formulário de contato', () => {
   it('deve enviar o formulário de contato com sucesso', () => {
     const contact = new ContactPage()
     const email = faker.internet.email()

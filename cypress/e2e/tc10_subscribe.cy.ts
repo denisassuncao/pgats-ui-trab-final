@@ -15,8 +15,7 @@ describe('TC10 - Assinatura na home', () => {
       cy.contains(/subscribe/i).click({ force: true })
     })
 
-    // Verificar mensagem de sucesso (texto pode variar). O container pode
-    // inicialmente estar oculto; checamos existência e conteúdo textual.
+    // Verificar mensagem de sucesso.
     cy.get('#success-subscribe, .alert-success', { timeout: 10000 })
       .should('exist')
       .invoke('text')

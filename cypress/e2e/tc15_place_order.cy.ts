@@ -23,7 +23,6 @@ describe('TC15 - Fazer pedido com registro prévio', () => {
     // Ir para produtos e abrir a página de detalhe do primeiro produto
     products.visit()
     // abrir detalhes do primeiro produto (View Product) para então adicionar ao carrinho de forma unívoca
-    // tentar obter o href do link de detalhe e visitar diretamente para evitar problemas de overlay/múltiplos elementos
     cy.get('.product-image-wrapper, .single-products').first().then(($card: any) => {
       const href = $card.find('a[href*="/product_details/"]').attr('href')
       if (href) {
@@ -35,8 +34,7 @@ describe('TC15 - Fazer pedido com registro prévio', () => {
       }
     })
 
-    // Na página de detalhe do produto, clicar em Add to cart (único botão nessa página)
-    // Aguardar até o botão estar visível, então clicar no primeiro que encontrar
+    // Na página de detalhe do produto, clicar em Add to cart
     cy.wait(1000) // dar tempo para a página carregar
     cy.contains(/add to cart/i).should('be.visible').first().click({ force: true })
     

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:11:17.772Z",
-    "end": "2025-11-02T21:11:21.994Z",
-    "duration": 4222,
+    "start": "2025-11-02T21:16:36.632Z",
+    "end": "2025-11-02T21:16:41.369Z",
+    "duration": 4737,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c3ce7dcd-d445-4cc2-9623-bfea1cd7749d",
+      "uuid": "7393e50f-836c-49a3-904c-92b1270889ca",
       "title": "",
       "fullFile": "cypress/e2e/tc06_contact.cy.ts",
       "file": "cypress/e2e/tc06_contact.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "68f9d3af-b56d-4800-9ca4-9dd294d28feb",
+          "uuid": "925cc0ef-3e54-459f-918d-1bb654c901c0",
           "title": "TC06 - Contact Us form",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve enviar o formulário de contato com sucesso",
               "fullTitle": "TC06 - Contact Us form deve enviar o formulário de contato com sucesso",
               "timedOut": null,
-              "duration": 4209,
+              "duration": 4721,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const contact = new contactPage_1.ContactPage();\nconst email = faker_1.faker.internet.email();\ncontact.visit();\n// Preencher e submeter\ncontact.submitContact('Contato Teste', email, 'Assunto teste', 'Mensagem de teste via Cypress');\n// Verificar mensagem de sucesso\ncy.contains('Success! Your details have been submitted successfully.').should('be.visible');\n// Voltar à home — usar link para a raiz do site\ncy.get('a[href=\"/\"]').first().click({ force: true });",
               "err": {},
-              "uuid": "184f3a64-b09f-4913-be12-9cf526c0f8b3",
-              "parentUUID": "68f9d3af-b56d-4800-9ca4-9dd294d28feb",
+              "uuid": "f9dc898e-efb1-4d6a-a75b-9743a66980e6",
+              "parentUUID": "925cc0ef-3e54-459f-918d-1bb654c901c0",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "184f3a64-b09f-4913-be12-9cf526c0f8b3"
+            "f9dc898e-efb1-4d6a-a75b-9743a66980e6"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4209,
+          "duration": 4721,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

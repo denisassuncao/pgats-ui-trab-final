@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:10:41.118Z",
-    "end": "2025-11-02T21:10:48.659Z",
-    "duration": 7541,
+    "start": "2025-11-02T21:15:59.371Z",
+    "end": "2025-11-02T21:16:07.376Z",
+    "duration": 8005,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "78fed623-be25-4c1c-af82-d1df20e1ef6b",
+      "uuid": "6c023a5c-f02c-4eb2-b7a2-b91420614b9d",
       "title": "",
       "fullFile": "cypress/e2e/tc04_logout.cy.ts",
       "file": "cypress/e2e/tc04_logout.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c4280d72-cdda-470e-9a02-0704074bb713",
+          "uuid": "f0f11c50-0f53-4fe3-8940-183498ad2f86",
           "title": "TC04 - Logout",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve logout corretamente após login",
               "fullTitle": "TC04 - Logout deve logout corretamente após login",
               "timedOut": null,
-              "duration": 7469,
+              "duration": 7931,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// Reaproveitamos o Page Object para registro + logout\nconst signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário via Page Object\nsignup.visit();\nsignup.startSignup('UsuarioLogout', email);\nsignup.fillAccountInformation(password);\n// clicar em continuar se existir\ncy.get('body').then($b => {\n    if ($b.find('a[data-qa=\"continue-button\"]').length)\n        cy.get('a[data-qa=\"continue-button\"]').click();\n});\n// Fazer logout\ncy.contains(/logout/i, { timeout: 10000 }).should('be.visible').click();\n// Verificar retorno à página de login/signup\ncy.contains(/signup \\/? login/i, { timeout: 10000 }).should('be.visible');",
               "err": {},
-              "uuid": "0f4b4ed9-1d58-4420-a04b-6ea060d6cf7b",
-              "parentUUID": "c4280d72-cdda-470e-9a02-0704074bb713",
+              "uuid": "c118628c-2d5c-4e8b-a17b-191283af60f2",
+              "parentUUID": "f0f11c50-0f53-4fe3-8940-183498ad2f86",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0f4b4ed9-1d58-4420-a04b-6ea060d6cf7b"
+            "c118628c-2d5c-4e8b-a17b-191283af60f2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7469,
+          "duration": 7931,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

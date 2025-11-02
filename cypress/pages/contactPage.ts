@@ -11,5 +11,6 @@ export class ContactPage {
     cy.get('textarea[data-qa="message"]').clear().type(message)
     // enviar
     cy.get('input[data-qa="submit-button"]').click()
+    
   }
 }

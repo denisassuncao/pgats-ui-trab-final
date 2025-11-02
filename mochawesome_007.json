@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-02T21:06:28.557Z",
+    "end": "2025-11-02T21:06:30.982Z",
+    "duration": 2425,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9dc79015-1fa2-45a7-92b5-c78b6c3b7983",
+      "title": "",
+      "fullFile": "cypress/e2e/tc09_search.cy.ts",
+      "file": "cypress/e2e/tc09_search.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "21a318f6-ff86-431f-b9f0-33463ff39fe3",
+          "title": "TC09 - Pesquisa de produto",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "deve retornar resultados ao pesquisar um termo existente",
+              "fullTitle": "TC09 - Pesquisa de produto deve retornar resultados ao pesquisar um termo existente",
+              "timedOut": null,
+              "duration": 2405,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\n// Termo genérico que deve retornar itens\nproducts.search('dress');\n// Verifica que resultados aparecem\ncy.get('.features_items').should('contain.text', 'Dress');",
+              "err": {},
+              "uuid": "4fa5e85e-54b5-43af-8b1c-31ca5bc4c1f2",
+              "parentUUID": "21a318f6-ff86-431f-b9f0-33463ff39fe3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4fa5e85e-54b5-43af-8b1c-31ca5bc4c1f2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2405,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

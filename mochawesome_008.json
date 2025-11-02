@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:06:39.640Z",
-    "end": "2025-11-02T21:06:42.182Z",
-    "duration": 2542,
+    "start": "2025-11-02T21:11:41.311Z",
+    "end": "2025-11-02T21:11:43.440Z",
+    "duration": 2129,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "eb95a678-4e33-456e-bd40-bf1249f8620e",
+      "uuid": "27e703c8-5bcb-415c-9dc3-8736694b8fc0",
       "title": "",
       "fullFile": "cypress/e2e/tc10_subscribe.cy.ts",
       "file": "cypress/e2e/tc10_subscribe.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d846f753-5ec1-4778-b2de-a3cb282d8cb8",
+          "uuid": "58d25d5a-d19b-48d9-a0cd-268ace0d4b5c",
           "title": "TC10 - Assinatura na home",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve permitir assinar a newsletter na home",
               "fullTitle": "TC10 - Assinatura na home deve permitir assinar a newsletter na home",
               "timedOut": null,
-              "duration": 2510,
+              "duration": 2089,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('/');\nconst email = faker_1.faker.internet.email();\n// rolar até o footer onde está o campo de assinatura e usar seletores flexíveis\ncy.get('footer').scrollIntoView();\ncy.get('footer').within(() => {\n    // tentar diferentes seletores de input de email\n    cy.get('input[type=\"email\"], input[name*=\"email\"], input#susbscribe_email, input#subscribe').first().type(email);\n    // clicar no botão de subscribe pelo texto\n    cy.contains(/subscribe/i).click({ force: true });\n});\n// Verificar mensagem de sucesso (texto pode variar). O container pode\n// inicialmente estar oculto; checamos existência e conteúdo textual.\ncy.get('#success-subscribe, .alert-success', { timeout: 10000 })\n    .should('exist')\n    .invoke('text')\n    .then(text => {\n    const lower = (text || '').toLowerCase();\n    expect(lower).to.satisfy(t => t.includes('success') || t.includes('subscribed') || t.includes('thank'));\n});",
               "err": {},
-              "uuid": "241aba9f-e514-407c-ae12-811d445dad3d",
-              "parentUUID": "d846f753-5ec1-4778-b2de-a3cb282d8cb8",
+              "uuid": "7fcfe0c6-bdb9-4976-8b8e-945a6b88d7d1",
+              "parentUUID": "58d25d5a-d19b-48d9-a0cd-268ace0d4b5c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "241aba9f-e514-407c-ae12-811d445dad3d"
+            "7fcfe0c6-bdb9-4976-8b8e-945a6b88d7d1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2510,
+          "duration": 2089,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

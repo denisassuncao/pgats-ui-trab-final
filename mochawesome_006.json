@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T22:12:28.753Z",
-    "end": "2025-11-02T22:12:30.699Z",
-    "duration": 1946,
+    "start": "2025-11-02T22:47:18.570Z",
+    "end": "2025-11-02T22:47:20.709Z",
+    "duration": 2139,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "431853a7-1d11-4101-aa7c-0ea1488cf5ef",
+      "uuid": "d48c57fb-09dd-4a52-af6b-8569cb38b66f",
       "title": "",
       "fullFile": "cypress/e2e/tc08_products.cy.ts",
       "file": "cypress/e2e/tc08_products.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "591a58ec-b17e-4ebc-8656-3c645251c180",
+          "uuid": "218e11f8-c80d-477f-83d7-683172167dc2",
           "title": "TC08 - Lista de produtos e detalhes",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve listar produtos e abrir detalhe do primeiro",
               "fullTitle": "TC08 - Lista de produtos e detalhes deve listar produtos e abrir detalhe do primeiro",
               "timedOut": null,
-              "duration": 1924,
+              "duration": 2117,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\nproducts.assertProductListVisible();\n// Abrir detalhes do primeiro produto\ncy.get('.product-image-wrapper').first().within(() => {\n    cy.contains('View Product').click({ force: true });\n});\n// Verificar que a página de detalhes mostra informações do produto\ncy.get('.product-information').should('be.visible');",
               "err": {},
-              "uuid": "6cce3e80-0900-4b9e-bd42-b74d54dee0e4",
-              "parentUUID": "591a58ec-b17e-4ebc-8656-3c645251c180",
+              "uuid": "d66d84b7-bc18-4235-9b4f-9ab4c8b43e41",
+              "parentUUID": "218e11f8-c80d-477f-83d7-683172167dc2",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6cce3e80-0900-4b9e-bd42-b74d54dee0e4"
+            "d66d84b7-bc18-4235-9b4f-9ab4c8b43e41"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1924,
+          "duration": 2117,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

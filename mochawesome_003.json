@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T22:11:43.086Z",
-    "end": "2025-11-02T22:11:51.141Z",
-    "duration": 8055,
+    "start": "2025-11-02T22:46:30.989Z",
+    "end": "2025-11-02T22:46:39.116Z",
+    "duration": 8127,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "5dcd8bb9-b519-474c-84b4-92e7866fd1af",
+      "uuid": "cfcc0d99-70f2-46ea-92f6-53aca660bb1d",
       "title": "",
       "fullFile": "cypress/e2e/tc04_logout.cy.ts",
       "file": "cypress/e2e/tc04_logout.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ac6891df-7d81-4448-9d79-95357c8ab038",
+          "uuid": "e6266c2f-e55a-4917-b186-b44e966f98d5",
           "title": "TC04 - Logout do usuário",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve realizar logout corretamente após login",
               "fullTitle": "TC04 - Logout do usuário deve realizar logout corretamente após login",
               "timedOut": null,
-              "duration": 7982,
+              "duration": 8029,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// Reaproveitamos o Page Object para registro + logout\nconst signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário via Page Object\nsignup.visit();\nsignup.startSignup('UsuarioLogout', email);\nsignup.fillAccountInformation(password);\n// clicar em continuar se existir\ncy.get('body').then($b => {\n    if ($b.find('a[data-qa=\"continue-button\"]').length)\n        cy.get('a[data-qa=\"continue-button\"]').click();\n});\n// Fazer logout\ncy.contains(/logout/i, { timeout: 10000 }).should('be.visible').click();\n// Verificar retorno à página de login/signup\ncy.contains(/signup \\/? login/i, { timeout: 10000 }).should('be.visible');",
               "err": {},
-              "uuid": "64294363-6180-483f-808e-ed93ba8e9036",
-              "parentUUID": "ac6891df-7d81-4448-9d79-95357c8ab038",
+              "uuid": "85ba3238-dd2f-4f4d-bc3b-1b571dde0bb3",
+              "parentUUID": "e6266c2f-e55a-4917-b186-b44e966f98d5",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "64294363-6180-483f-808e-ed93ba8e9036"
+            "85ba3238-dd2f-4f4d-bc3b-1b571dde0bb3"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7982,
+          "duration": 8029,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

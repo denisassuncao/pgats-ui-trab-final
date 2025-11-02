@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T22:12:45.437Z",
-    "end": "2025-11-02T22:12:48.138Z",
-    "duration": 2701,
+    "start": "2025-11-02T22:47:35.017Z",
+    "end": "2025-11-02T22:47:37.507Z",
+    "duration": 2490,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "087f2b79-0657-4c25-bd41-bb0a36508a94",
+      "uuid": "dff723fe-543c-451f-aa8c-626efc70ffa4",
       "title": "",
       "fullFile": "cypress/e2e/tc10_subscribe.cy.ts",
       "file": "cypress/e2e/tc10_subscribe.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a1c9b9cc-348c-48d2-89db-8989ae4036f6",
+          "uuid": "5553b2fa-358f-4dc8-8462-f453f8da2e33",
           "title": "TC10 - Assinatura na home",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve permitir assinar a newsletter na home",
               "fullTitle": "TC10 - Assinatura na home deve permitir assinar a newsletter na home",
               "timedOut": null,
-              "duration": 2657,
+              "duration": 2458,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('/');\nconst email = faker_1.faker.internet.email();\n// rolar até o footer onde está o campo de assinatura e usar seletores flexíveis\ncy.get('footer').scrollIntoView();\ncy.get('footer').within(() => {\n    // tentar diferentes seletores de input de email\n    cy.get('input[type=\"email\"], input[name*=\"email\"], input#susbscribe_email, input#subscribe').first().type(email);\n    // clicar no botão de subscribe pelo texto\n    cy.contains(/subscribe/i).click({ force: true });\n});\n// Verificar mensagem de sucesso.\ncy.get('#success-subscribe, .alert-success', { timeout: 10000 })\n    .should('exist')\n    .invoke('text')\n    .then(text => {\n    const lower = (text || '').toLowerCase();\n    expect(lower).to.satisfy(t => t.includes('success') || t.includes('subscribed') || t.includes('thank'));\n});",
               "err": {},
-              "uuid": "d0662a98-617c-483d-9964-0b55bb2bbd4d",
-              "parentUUID": "a1c9b9cc-348c-48d2-89db-8989ae4036f6",
+              "uuid": "86600730-7dff-4bb9-81e8-b99d24d694ad",
+              "parentUUID": "5553b2fa-358f-4dc8-8462-f453f8da2e33",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d0662a98-617c-483d-9964-0b55bb2bbd4d"
+            "86600730-7dff-4bb9-81e8-b99d24d694ad"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2657,
+          "duration": 2458,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

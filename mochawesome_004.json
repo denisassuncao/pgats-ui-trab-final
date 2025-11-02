@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T22:03:28.742Z",
-    "end": "2025-11-02T22:03:38.844Z",
-    "duration": 10102,
+    "start": "2025-11-02T22:12:00.820Z",
+    "end": "2025-11-02T22:12:10.414Z",
+    "duration": 9594,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ad4d1b66-43fb-4736-b1c6-35be8430d752",
+      "uuid": "f158377b-26b2-4da3-8d94-189dab1ba3b0",
       "title": "",
       "fullFile": "cypress/e2e/tc05_register_existing.cy.ts",
       "file": "cypress/e2e/tc05_register_existing.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "9ad3126c-e9b5-41ca-8170-6e169c9423e6",
+          "uuid": "ca405f6e-ec54-4598-b43c-92b5f3e38e3a",
           "title": "TC05 - Registrar com e-mail existente",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "deve recusar cadastro quando email já existe",
               "fullTitle": "TC05 - Registrar com e-mail existente deve recusar cadastro quando email já existe",
               "timedOut": null,
-              "duration": 10031,
+              "duration": 9517,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "const signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\n// Primeiro registro (sucesso)\nsignup.visit();\nsignup.startSignup('Usuario Existente', email);\nsignup.fillAccountInformation('Senha123!');\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Logout\ncy.contains('Logout').click();\n// Tentar registrar novamente com o mesmo email\nsignup.visit();\nsignup.startSignup('Usuario Existente2', email);\n// Verificar que mensagem de erro sobre email existente aparece\ncy.contains('Email Address already exist!').should('be.visible');",
               "err": {},
-              "uuid": "5ada3559-9baa-401d-a8d6-21de426f38d9",
-              "parentUUID": "9ad3126c-e9b5-41ca-8170-6e169c9423e6",
+              "uuid": "a1c8da57-255d-4987-affc-c78cf8d649a9",
+              "parentUUID": "ca405f6e-ec54-4598-b43c-92b5f3e38e3a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "5ada3559-9baa-401d-a8d6-21de426f38d9"
+            "a1c8da57-255d-4987-affc-c78cf8d649a9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10031,
+          "duration": 9517,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

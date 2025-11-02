@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T22:04:02.661Z",
-    "end": "2025-11-02T22:04:05.220Z",
-    "duration": 2559,
+    "start": "2025-11-02T22:12:33.623Z",
+    "end": "2025-11-02T22:12:36.002Z",
+    "duration": 2379,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ef8033fb-889a-466f-a406-af6f379ac961",
+      "uuid": "d2bd9fd9-31c1-4bd7-961c-39d5c60d3fc5",
       "title": "",
       "fullFile": "cypress/e2e/tc09_search.cy.ts",
       "file": "cypress/e2e/tc09_search.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0390707f-70ea-4fd8-b52a-8e42e0220c7d",
+          "uuid": "2f03edc0-6399-4905-95c8-fa7bdf4d08b8",
           "title": "TC09 - Pesquisa de produto",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve retornar resultados ao pesquisar um termo existente",
               "fullTitle": "TC09 - Pesquisa de produto deve retornar resultados ao pesquisar um termo existente",
               "timedOut": null,
-              "duration": 2529,
+              "duration": 2355,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\n// Termo genérico que deve retornar itens\nproducts.search('dress');\n// Verifica que resultados aparecem\ncy.get('.features_items').should('contain.text', 'Dress');",
               "err": {},
-              "uuid": "cab12251-56c6-411a-8418-d8e267aceed2",
-              "parentUUID": "0390707f-70ea-4fd8-b52a-8e42e0220c7d",
+              "uuid": "e4915510-d0ca-4e34-a40e-e1751efd128c",
+              "parentUUID": "2f03edc0-6399-4905-95c8-fa7bdf4d08b8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cab12251-56c6-411a-8418-d8e267aceed2"
+            "e4915510-d0ca-4e34-a40e-e1751efd128c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2529,
+          "duration": 2355,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

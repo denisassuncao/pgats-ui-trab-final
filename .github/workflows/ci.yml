@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Testes Cypress
 
 on:
   push:
@@ -12,26 +12,26 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
+      - name: Fazer checkout do codigo
         uses: actions/checkout@v4
 
-      - name: Setup Chrome
+      - name: Configurar o navegador Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: Setup Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
           cache: 'npm'
 
-      - name: Install dependencies
+      - name: Instalar dependências
         run: npm ci
 
-      - name: Run Cypress tests
+      - name: Executar testes Cypress
         run: npm run test:ci
         continue-on-error: true
 
-      - name: Validate and merge mochawesome reports (only if valid jsons exist)
+      - name: Validar e mesclar relatórios Mochawesome (somente se existirem JSONs válidos)
         if: always()
         run: |
           echo "Checking for mochawesome JSON reports..."
@@ -57,7 +57,7 @@ jobs:
             echo "No valid mochawesome JSON files to merge — skipping merge."
           fi
 
-      - name: Upload test artifacts
+      - name: Enviar artefatos de teste
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -67,7 +67,7 @@ jobs:
             cypress/screenshots/
             cypress/videos/
 
-      - name: Deploy report to GitHub Pages
+      - name: Publicar relatório no GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:

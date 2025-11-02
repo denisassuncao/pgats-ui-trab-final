@@ -9,6 +9,8 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,9 +31,18 @@ jobs:
         run: npm run test:ci
         continue-on-error: true
 
-      - name: Merge mochawesome reports
+      - name: Merge mochawesome reports (only if jsons exist)
         if: always()
-        run: npm run merge:reports
+        run: |
+          echo "Checking for mochawesome JSON reports..."
+          shopt -s nullglob || true
+          files=(cypress/reports/mochawesome*.json)
+          if [ -e "${files[0]}" ]; then
+            echo "Found mochawesome JSON files, merging..."
+            npm run merge:reports
+          else
+            echo "No mochawesome JSON files found — skipping merge."
+          fi
 
       - name: Upload test artifacts
         if: always()

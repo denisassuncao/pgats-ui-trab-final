@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:17:14.765Z",
-    "end": "2025-11-02T21:17:26.830Z",
-    "duration": 12065,
+    "start": "2025-11-02T21:27:46.107Z",
+    "end": "2025-11-02T21:27:56.858Z",
+    "duration": 10751,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "fc54b8fe-9f76-461f-a50e-cf2a2d56e2a2",
+      "uuid": "8c0e45a2-d408-43fe-bd7b-aa36e0f4c2be",
       "title": "",
       "fullFile": "cypress/e2e/tc15_place_order.cy.ts",
       "file": "cypress/e2e/tc15_place_order.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "296de1a3-5cc6-46a8-adfe-7c0f6f1bce25",
+          "uuid": "0dc5a72f-4c4c-482a-a139-49873c2f88ef",
           "title": "TC15 - Fazer pedido com registro prévio",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve permitir registrar, adicionar produto e prosseguir para checkout",
               "fullTitle": "TC15 - Fazer pedido com registro prévio deve permitir registrar, adicionar produto e prosseguir para checkout",
               "timedOut": null,
-              "duration": 12001,
+              "duration": 10690,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nconst signup = new signupPage_1.SignupPage();\nconst cart = new cartPage_1.CartPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário\nsignup.visit();\nsignup.startSignup('Usuario Pedido', email);\nsignup.fillAccountInformation(password);\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Ir para produtos e abrir a página de detalhe do primeiro produto\nproducts.visit();\n// abrir detalhes do primeiro produto (View Product) para então adicionar ao carrinho de forma unívoca\n// tentar obter o href do link de detalhe e visitar diretamente para evitar problemas de overlay/múltiplos elementos\ncy.get('.product-image-wrapper, .single-products').first().then(($card) => {\n    const href = $card.find('a[href*=\"/product_details/\"]').attr('href');\n    if (href) {\n        // navegar diretamente para a página de detalhe do produto\n        cy.visit(href);\n    }\n    else {\n        // fallback: clicar no primeiro link de detalhe disponível\n        cy.get('a[href*=\"/product_details/\"]').first().click({ force: true });\n    }\n});\n// Na página de detalhe do produto, clicar em Add to cart (único botão nessa página)\n// Aguardar até o botão estar visível, então clicar no primeiro que encontrar\ncy.wait(1000); // dar tempo para a página carregar\ncy.contains(/add to cart/i).should('be.visible').first().click({ force: true });\n// Aguardar o modal de sucesso e então ir para o carrinho\ncy.contains(/added!/i).should('be.visible');\ncy.wait(500); // aguardar animação\n// Visualizar carrinho e proceder\ncy.contains('View Cart').should('be.visible').first().click({ force: true });\ncart.proceedToCheckout();\n// Verifica que chegou à página de checkout (pode pedir confirmação de endereço)\ncy.contains('Address Details').should('be.visible');",
               "err": {},
-              "uuid": "598d5186-3fe3-49b8-8d16-c55b6ab09981",
-              "parentUUID": "296de1a3-5cc6-46a8-adfe-7c0f6f1bce25",
+              "uuid": "d897fc81-f365-4357-bcf8-ac6377f61081",
+              "parentUUID": "0dc5a72f-4c4c-482a-a139-49873c2f88ef",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "598d5186-3fe3-49b8-8d16-c55b6ab09981"
+            "d897fc81-f365-4357-bcf8-ac6377f61081"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 12001,
+          "duration": 10690,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:16:17.008Z",
-    "end": "2025-11-02T21:16:26.677Z",
-    "duration": 9669,
+    "start": "2025-11-02T21:26:50.458Z",
+    "end": "2025-11-02T21:26:59.440Z",
+    "duration": 8982,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1d9c670f-0e4b-44b1-9504-2d1594a39a1c",
+      "uuid": "d33d8f87-4091-43d4-abd8-ae4c19886446",
       "title": "",
       "fullFile": "cypress/e2e/tc05_register_existing.cy.ts",
       "file": "cypress/e2e/tc05_register_existing.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "2c2722b1-c709-4e95-a514-6c02ccc7af33",
+          "uuid": "04c1642e-bbee-402f-94ce-ffa4446026e8",
           "title": "TC05 - Registrar com e-mail existente",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve recusar cadastro quando email já existe",
               "fullTitle": "TC05 - Registrar com e-mail existente deve recusar cadastro quando email já existe",
               "timedOut": null,
-              "duration": 9599,
+              "duration": 8905,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\n// Primeiro registro (sucesso)\nsignup.visit();\nsignup.startSignup('Usuario Existente', email);\nsignup.fillAccountInformation('Senha123!');\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Logout\ncy.contains('Logout').click();\n// Tentar registrar novamente com o mesmo email\nsignup.visit();\nsignup.startSignup('Usuario Existente2', email);\n// Verificar que mensagem de erro sobre email existente aparece\ncy.contains('Email Address already exist!').should('be.visible');",
               "err": {},
-              "uuid": "96158b5d-5062-45a3-95b3-65b4fcb285e7",
-              "parentUUID": "2c2722b1-c709-4e95-a514-6c02ccc7af33",
+              "uuid": "304744f4-185d-4ffc-bd55-7002e61e21a0",
+              "parentUUID": "04c1642e-bbee-402f-94ce-ffa4446026e8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "96158b5d-5062-45a3-95b3-65b4fcb285e7"
+            "304744f4-185d-4ffc-bd55-7002e61e21a0"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9599,
+          "duration": 8905,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

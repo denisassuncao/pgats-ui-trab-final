@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:16:45.757Z",
-    "end": "2025-11-02T21:16:47.689Z",
-    "duration": 1932,
+    "start": "2025-11-02T21:27:17.367Z",
+    "end": "2025-11-02T21:27:19.089Z",
+    "duration": 1722,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "73e6ae01-ab29-48ca-8229-ea89de105219",
+      "uuid": "b259de8a-143c-4348-b05f-1ec73dbfb733",
       "title": "",
       "fullFile": "cypress/e2e/tc08_products.cy.ts",
       "file": "cypress/e2e/tc08_products.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fabf603b-f3d1-4b32-99ea-87b7a9f3b252",
+          "uuid": "e91a1e14-5fc6-4ccf-a5d9-e23ad0c7c09a",
           "title": "TC08 - Lista de produtos e detalhes",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve listar produtos e abrir detalhe do primeiro",
               "fullTitle": "TC08 - Lista de produtos e detalhes deve listar produtos e abrir detalhe do primeiro",
               "timedOut": null,
-              "duration": 1892,
+              "duration": 1685,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\nproducts.assertProductListVisible();\n// Abrir detalhes do primeiro produto\n// Observação: dependendo do overlay do site, o clique força interação\ncy.get('.product-image-wrapper').first().within(() => {\n    cy.contains('View Product').click({ force: true });\n});\n// Verificar que a página de detalhes mostra informações do produto\ncy.get('.product-information').should('be.visible');",
               "err": {},
-              "uuid": "a4a3e9c1-b819-489a-8273-aacc16617126",
-              "parentUUID": "fabf603b-f3d1-4b32-99ea-87b7a9f3b252",
+              "uuid": "64d2260f-808e-42fc-a591-35ed8b339523",
+              "parentUUID": "e91a1e14-5fc6-4ccf-a5d9-e23ad0c7c09a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a4a3e9c1-b819-489a-8273-aacc16617126"
+            "64d2260f-808e-42fc-a591-35ed8b339523"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1892,
+          "duration": 1685,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

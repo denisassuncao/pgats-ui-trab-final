@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-02T21:15:25.263Z",
-    "end": "2025-11-02T21:15:36.730Z",
-    "duration": 11467,
+    "start": "2025-11-02T21:25:59.042Z",
+    "end": "2025-11-02T21:26:09.217Z",
+    "duration": 10175,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a6621371-98ec-462c-bef2-ae69263e8e00",
+      "uuid": "c755a019-519b-455e-80c0-1d273b9cf2b1",
       "title": "",
       "fullFile": "cypress/e2e/tc02_login_success.cy.ts",
       "file": "cypress/e2e/tc02_login_success.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1bdc55ba-9b1b-4dbb-9aa5-39c5ef5a483f",
+          "uuid": "aa64e0f1-319d-4aaf-bda9-1f7f098b7622",
           "title": "TC02 - Login com credenciais corretas",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve permitir login com email e senha válidos",
               "fullTitle": "TC02 - Login com credenciais corretas deve permitir login com email e senha válidos",
               "timedOut": null,
-              "duration": 11411,
+              "duration": 10109,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const signup = new signupPage_1.SignupPage();\nconst login = new loginPage_1.LoginPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar o usuário (garante que exista)\nsignup.visit();\nsignup.startSignup('Usuario Login', email);\nsignup.fillAccountInformation(password);\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Fazer logout para testar login\ncy.contains('Logout').click();\n// Testar login\nlogin.visit();\nlogin.login(email, password);\n// Verificar que login foi bem-sucedido\ncy.contains('Logged in as').should('be.visible');",
               "err": {},
-              "uuid": "bb8183d4-0934-4511-9790-d8f341e026e4",
-              "parentUUID": "1bdc55ba-9b1b-4dbb-9aa5-39c5ef5a483f",
+              "uuid": "402e8deb-ecc9-40ac-a131-f291c2e293a8",
+              "parentUUID": "aa64e0f1-319d-4aaf-bda9-1f7f098b7622",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "bb8183d4-0934-4511-9790-d8f341e026e4"
+            "402e8deb-ecc9-40ac-a131-f291c2e293a8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 11411,
+          "duration": 10109,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

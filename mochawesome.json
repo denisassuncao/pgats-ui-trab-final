@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-11-02T21:25:38.535Z",
-    "end": "2025-11-02T21:27:56.858Z",
-    "duration": 138323
+    "start": "2025-11-02T21:35:51.425Z",
+    "end": "2025-11-02T21:38:08.901Z",
+    "duration": 137476
   },
   "results": [
     {
-      "uuid": "4960fb10-f33b-4763-bb8e-3c02e4da36a8",
+      "uuid": "fe4df639-5816-4dfb-8681-a46696125cc8",
       "title": "",
       "fullFile": "cypress/e2e/tc01_register.cy.ts",
       "file": "cypress/e2e/tc01_register.cy.ts",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a0fd2119-e2c8-4eca-b96d-baf92c7a2fda",
+          "uuid": "b3803304-9475-4133-8e7a-0fd455ceb2ec",
           "title": "TC01 - Cadastrar usuário",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "deve criar um usuário novo com sucesso",
               "fullTitle": "TC01 - Cadastrar usuário deve criar um usuário novo com sucesso",
               "timedOut": null,
-              "duration": 9304,
+              "duration": 8914,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "const signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\nconst firstName = faker_1.faker.person.firstName();\n// Visita a página de signup\nsignup.visit();\n// Inicia cadastro com nome e email (usa faker para gerar dados únicos)\nsignup.startSignup(firstName + ' Teste', email);\n// Preenche o restante do formulário (senha e dados mínimos)\nsignup.fillAccountInformation('Senha123!');\n// Após submeter, o site pode mostrar 'ACCOUNT CREATED!' ou redirecionar\n// Vamos ser resilientes: se existir botão de continue, clicar e validar login;\n// caso contrário, aceitar o texto de confirmação ou verificar que usuário está logado.\ncy.get('body').then($body => {\n    if ($body.find('a[data-qa=\"continue-button\"]').length) {\n        cy.get('a[data-qa=\"continue-button\"]').click();\n        cy.contains(/logged in as/i, { timeout: 10000 }).should('be.visible');\n    }\n    else if ($body.text().match(/account created/i)) {\n        cy.contains(/account created/i).should('be.visible');\n        cy.get('a[data-qa=\"continue-button\"]').click();\n        cy.contains(/logged in as/i, { timeout: 10000 }).should('be.visible');\n    }\n    else {\n        // fallback: aguardar que a área de usuário apareça\n        cy.contains(/logged in as/i, { timeout: 10000 }).should('be.visible');\n    }\n});",
               "err": {},
-              "uuid": "ba563a7e-2692-47fc-a91b-8f40cb3fa00d",
-              "parentUUID": "a0fd2119-e2c8-4eca-b96d-baf92c7a2fda",
+              "uuid": "440d16d3-5606-4a6d-a38e-b65be53e43e9",
+              "parentUUID": "b3803304-9475-4133-8e7a-0fd455ceb2ec",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ba563a7e-2692-47fc-a91b-8f40cb3fa00d"
+            "440d16d3-5606-4a6d-a38e-b65be53e43e9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9304,
+          "duration": 8914,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "c755a019-519b-455e-80c0-1d273b9cf2b1",
+      "uuid": "abbd9f21-1267-4f00-b8bd-c106b000dff1",
       "title": "",
       "fullFile": "cypress/e2e/tc02_login_success.cy.ts",
       "file": "cypress/e2e/tc02_login_success.cy.ts",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "aa64e0f1-319d-4aaf-bda9-1f7f098b7622",
+          "uuid": "cc68a3a8-579c-4ab6-a9e1-941fa1c2622a",
           "title": "TC02 - Login com credenciais corretas",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "deve permitir login com email e senha válidos",
               "fullTitle": "TC02 - Login com credenciais corretas deve permitir login com email e senha válidos",
               "timedOut": null,
-              "duration": 10109,
+              "duration": 10074,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -105,20 +105,20 @@
               "context": null,
               "code": "const signup = new signupPage_1.SignupPage();\nconst login = new loginPage_1.LoginPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar o usuário (garante que exista)\nsignup.visit();\nsignup.startSignup('Usuario Login', email);\nsignup.fillAccountInformation(password);\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Fazer logout para testar login\ncy.contains('Logout').click();\n// Testar login\nlogin.visit();\nlogin.login(email, password);\n// Verificar que login foi bem-sucedido\ncy.contains('Logged in as').should('be.visible');",
               "err": {},
-              "uuid": "402e8deb-ecc9-40ac-a131-f291c2e293a8",
-              "parentUUID": "aa64e0f1-319d-4aaf-bda9-1f7f098b7622",
+              "uuid": "4eecad64-9a01-4c56-ae18-0c0e79942006",
+              "parentUUID": "cc68a3a8-579c-4ab6-a9e1-941fa1c2622a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "402e8deb-ecc9-40ac-a131-f291c2e293a8"
+            "4eecad64-9a01-4c56-ae18-0c0e79942006"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10109,
+          "duration": 10074,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -134,7 +134,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "12f480b8-e4ed-4994-9c44-9b4f0a34bca6",
+      "uuid": "9ef10abd-4a8d-4e4c-9724-d21fedf11ebf",
       "title": "",
       "fullFile": "cypress/e2e/tc03_login_fail.cy.ts",
       "file": "cypress/e2e/tc03_login_fail.cy.ts",
@@ -143,7 +143,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5fa421ba-3125-4ccb-9796-f785ba4141c3",
+          "uuid": "b726d43c-42d1-4d26-8806-2238fa1b297d",
           "title": "TC03 - Login com credenciais incorretas",
           "fullFile": "",
           "file": "",
@@ -154,7 +154,7 @@
               "title": "não deve permitir login com senha incorreta",
               "fullTitle": "TC03 - Login com credenciais incorretas não deve permitir login com senha incorreta",
               "timedOut": null,
-              "duration": 2135,
+              "duration": 2237,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -163,20 +163,20 @@
               "context": null,
               "code": "const login = new loginPage_1.LoginPage();\nconst fakeEmail = faker_1.faker.internet.email();\nlogin.visit();\nlogin.login(fakeEmail, 'senhaErrada');\n// Verifica mensagem de erro apropriada\ncy.contains('Your email or password is incorrect!').should('exist');",
               "err": {},
-              "uuid": "038e523f-9c37-4666-bf3e-dd5a09b6e3ae",
-              "parentUUID": "5fa421ba-3125-4ccb-9796-f785ba4141c3",
+              "uuid": "4a0643dd-f60b-461f-9938-f92f7999c930",
+              "parentUUID": "b726d43c-42d1-4d26-8806-2238fa1b297d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "038e523f-9c37-4666-bf3e-dd5a09b6e3ae"
+            "4a0643dd-f60b-461f-9938-f92f7999c930"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2135,
+          "duration": 2237,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -192,7 +192,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "51158dff-316c-4b6a-8af0-eddc326c7bf5",
+      "uuid": "27773c4e-f8e3-46f2-b8cc-f13ed78b184f",
       "title": "",
       "fullFile": "cypress/e2e/tc04_logout.cy.ts",
       "file": "cypress/e2e/tc04_logout.cy.ts",
@@ -201,7 +201,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b7888c29-5f6e-475b-b192-e7e0c02eb575",
+          "uuid": "c64ec23a-4f20-4bd8-9fd4-f7a2686df492",
           "title": "TC04 - Logout",
           "fullFile": "",
           "file": "",
@@ -212,7 +212,7 @@
               "title": "deve logout corretamente após login",
               "fullTitle": "TC04 - Logout deve logout corretamente após login",
               "timedOut": null,
-              "duration": 8429,
+              "duration": 7671,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -221,20 +221,20 @@
               "context": null,
               "code": "// Reaproveitamos o Page Object para registro + logout\nconst signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário via Page Object\nsignup.visit();\nsignup.startSignup('UsuarioLogout', email);\nsignup.fillAccountInformation(password);\n// clicar em continuar se existir\ncy.get('body').then($b => {\n    if ($b.find('a[data-qa=\"continue-button\"]').length)\n        cy.get('a[data-qa=\"continue-button\"]').click();\n});\n// Fazer logout\ncy.contains(/logout/i, { timeout: 10000 }).should('be.visible').click();\n// Verificar retorno à página de login/signup\ncy.contains(/signup \\/? login/i, { timeout: 10000 }).should('be.visible');",
               "err": {},
-              "uuid": "82869c79-0087-4837-b22d-4e1c2abd42cb",
-              "parentUUID": "b7888c29-5f6e-475b-b192-e7e0c02eb575",
+              "uuid": "5b425a71-f4a4-45ad-aa0c-fa3a42cb1523",
+              "parentUUID": "c64ec23a-4f20-4bd8-9fd4-f7a2686df492",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "82869c79-0087-4837-b22d-4e1c2abd42cb"
+            "5b425a71-f4a4-45ad-aa0c-fa3a42cb1523"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8429,
+          "duration": 7671,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -250,7 +250,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "d33d8f87-4091-43d4-abd8-ae4c19886446",
+      "uuid": "3485633a-f179-48bf-8197-dfaede22dd98",
       "title": "",
       "fullFile": "cypress/e2e/tc05_register_existing.cy.ts",
       "file": "cypress/e2e/tc05_register_existing.cy.ts",
@@ -259,7 +259,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "04c1642e-bbee-402f-94ce-ffa4446026e8",
+          "uuid": "9e08723b-9849-4111-9a7a-af231d5b5cb2",
           "title": "TC05 - Registrar com e-mail existente",
           "fullFile": "",
           "file": "",
@@ -270,7 +270,7 @@
               "title": "deve recusar cadastro quando email já existe",
               "fullTitle": "TC05 - Registrar com e-mail existente deve recusar cadastro quando email já existe",
               "timedOut": null,
-              "duration": 8905,
+              "duration": 9794,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -279,20 +279,20 @@
               "context": null,
               "code": "const signup = new signupPage_1.SignupPage();\nconst email = faker_1.faker.internet.email();\n// Primeiro registro (sucesso)\nsignup.visit();\nsignup.startSignup('Usuario Existente', email);\nsignup.fillAccountInformation('Senha123!');\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Logout\ncy.contains('Logout').click();\n// Tentar registrar novamente com o mesmo email\nsignup.visit();\nsignup.startSignup('Usuario Existente2', email);\n// Verificar que mensagem de erro sobre email existente aparece\ncy.contains('Email Address already exist!').should('be.visible');",
               "err": {},
-              "uuid": "304744f4-185d-4ffc-bd55-7002e61e21a0",
-              "parentUUID": "04c1642e-bbee-402f-94ce-ffa4446026e8",
+              "uuid": "ca0e7f85-7b90-41b8-a150-cf7efe8883fe",
+              "parentUUID": "9e08723b-9849-4111-9a7a-af231d5b5cb2",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "304744f4-185d-4ffc-bd55-7002e61e21a0"
+            "ca0e7f85-7b90-41b8-a150-cf7efe8883fe"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8905,
+          "duration": 9794,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -308,7 +308,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "ce2e442d-3860-47bc-ad2e-b89cb0d6c601",
+      "uuid": "d2455910-5b79-4a22-9842-1dc0e5794828",
       "title": "",
       "fullFile": "cypress/e2e/tc06_contact.cy.ts",
       "file": "cypress/e2e/tc06_contact.cy.ts",
@@ -317,7 +317,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "5650c9f6-c6a5-4b18-8962-a39fb32734ee",
+          "uuid": "700f57cc-4454-4a20-af74-61c6313bf91c",
           "title": "TC06 - Contact Us form",
           "fullFile": "",
           "file": "",
@@ -328,7 +328,7 @@
               "title": "deve enviar o formulário de contato com sucesso",
               "fullTitle": "TC06 - Contact Us form deve enviar o formulário de contato com sucesso",
               "timedOut": null,
-              "duration": 4221,
+              "duration": 4612,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -337,20 +337,20 @@
               "context": null,
               "code": "const contact = new contactPage_1.ContactPage();\nconst email = faker_1.faker.internet.email();\ncontact.visit();\n// Preencher e submeter\ncontact.submitContact('Contato Teste', email, 'Assunto teste', 'Mensagem de teste via Cypress');\n// Verificar mensagem de sucesso\ncy.contains('Success! Your details have been submitted successfully.').should('be.visible');\n// Voltar à home — usar link para a raiz do site\ncy.get('a[href=\"/\"]').first().click({ force: true });",
               "err": {},
-              "uuid": "23972f1a-3505-40b2-89a4-9d72bf948bc8",
-              "parentUUID": "5650c9f6-c6a5-4b18-8962-a39fb32734ee",
+              "uuid": "962f6f6d-4009-482e-8bdc-d135598e32c2",
+              "parentUUID": "700f57cc-4454-4a20-af74-61c6313bf91c",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "23972f1a-3505-40b2-89a4-9d72bf948bc8"
+            "962f6f6d-4009-482e-8bdc-d135598e32c2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4221,
+          "duration": 4612,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -366,7 +366,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "b259de8a-143c-4348-b05f-1ec73dbfb733",
+      "uuid": "f9f7b530-f180-4bb7-87bf-cc89284128a9",
       "title": "",
       "fullFile": "cypress/e2e/tc08_products.cy.ts",
       "file": "cypress/e2e/tc08_products.cy.ts",
@@ -375,7 +375,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e91a1e14-5fc6-4ccf-a5d9-e23ad0c7c09a",
+          "uuid": "bacc2bee-1190-4e70-a9e6-9f4ecb219b4b",
           "title": "TC08 - Lista de produtos e detalhes",
           "fullFile": "",
           "file": "",
@@ -386,7 +386,7 @@
               "title": "deve listar produtos e abrir detalhe do primeiro",
               "fullTitle": "TC08 - Lista de produtos e detalhes deve listar produtos e abrir detalhe do primeiro",
               "timedOut": null,
-              "duration": 1685,
+              "duration": 1705,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -395,20 +395,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\nproducts.assertProductListVisible();\n// Abrir detalhes do primeiro produto\n// Observação: dependendo do overlay do site, o clique força interação\ncy.get('.product-image-wrapper').first().within(() => {\n    cy.contains('View Product').click({ force: true });\n});\n// Verificar que a página de detalhes mostra informações do produto\ncy.get('.product-information').should('be.visible');",
               "err": {},
-              "uuid": "64d2260f-808e-42fc-a591-35ed8b339523",
-              "parentUUID": "e91a1e14-5fc6-4ccf-a5d9-e23ad0c7c09a",
+              "uuid": "aae0d67d-4440-464c-931d-f4ab4181a8b7",
+              "parentUUID": "bacc2bee-1190-4e70-a9e6-9f4ecb219b4b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "64d2260f-808e-42fc-a591-35ed8b339523"
+            "aae0d67d-4440-464c-931d-f4ab4181a8b7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1685,
+          "duration": 1705,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -424,7 +424,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "e4bbbe27-679c-4de8-a98c-e2222d13905f",
+      "uuid": "ebb49179-00d5-4e91-a138-7673396a1d4e",
       "title": "",
       "fullFile": "cypress/e2e/tc09_search.cy.ts",
       "file": "cypress/e2e/tc09_search.cy.ts",
@@ -433,7 +433,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "505ac835-59b0-4ada-8704-86ceff25ccfb",
+          "uuid": "a7088369-5299-4ddc-a2b7-f1b0f18b8e84",
           "title": "TC09 - Pesquisa de produto",
           "fullFile": "",
           "file": "",
@@ -444,7 +444,7 @@
               "title": "deve retornar resultados ao pesquisar um termo existente",
               "fullTitle": "TC09 - Pesquisa de produto deve retornar resultados ao pesquisar um termo existente",
               "timedOut": null,
-              "duration": 2503,
+              "duration": 2278,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -453,20 +453,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nproducts.visit();\n// Termo genérico que deve retornar itens\nproducts.search('dress');\n// Verifica que resultados aparecem\ncy.get('.features_items').should('contain.text', 'Dress');",
               "err": {},
-              "uuid": "4b7e932a-9b50-45a4-89b2-353955b2a922",
-              "parentUUID": "505ac835-59b0-4ada-8704-86ceff25ccfb",
+              "uuid": "ca833a16-8666-4d6e-b664-9f920bf0984d",
+              "parentUUID": "a7088369-5299-4ddc-a2b7-f1b0f18b8e84",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4b7e932a-9b50-45a4-89b2-353955b2a922"
+            "ca833a16-8666-4d6e-b664-9f920bf0984d"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2503,
+          "duration": 2278,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -482,7 +482,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "aa6d0ce1-d2a3-4e10-bcbb-85799a62ea88",
+      "uuid": "e1a970ce-e333-4de5-8fce-0bb46eeb02a4",
       "title": "",
       "fullFile": "cypress/e2e/tc10_subscribe.cy.ts",
       "file": "cypress/e2e/tc10_subscribe.cy.ts",
@@ -491,7 +491,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "45919b6f-cc21-4519-a791-49532b8d3e9c",
+          "uuid": "5e2fb290-1c19-46a3-936c-c1a3512b67ea",
           "title": "TC10 - Assinatura na home",
           "fullFile": "",
           "file": "",
@@ -502,7 +502,7 @@
               "title": "deve permitir assinar a newsletter na home",
               "fullTitle": "TC10 - Assinatura na home deve permitir assinar a newsletter na home",
               "timedOut": null,
-              "duration": 2190,
+              "duration": 2343,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -511,20 +511,20 @@
               "context": null,
               "code": "cy.visit('/');\nconst email = faker_1.faker.internet.email();\n// rolar até o footer onde está o campo de assinatura e usar seletores flexíveis\ncy.get('footer').scrollIntoView();\ncy.get('footer').within(() => {\n    // tentar diferentes seletores de input de email\n    cy.get('input[type=\"email\"], input[name*=\"email\"], input#susbscribe_email, input#subscribe').first().type(email);\n    // clicar no botão de subscribe pelo texto\n    cy.contains(/subscribe/i).click({ force: true });\n});\n// Verificar mensagem de sucesso (texto pode variar). O container pode\n// inicialmente estar oculto; checamos existência e conteúdo textual.\ncy.get('#success-subscribe, .alert-success', { timeout: 10000 })\n    .should('exist')\n    .invoke('text')\n    .then(text => {\n    const lower = (text || '').toLowerCase();\n    expect(lower).to.satisfy(t => t.includes('success') || t.includes('subscribed') || t.includes('thank'));\n});",
               "err": {},
-              "uuid": "6d1af506-5db8-4319-baa9-81294bfe5bd3",
-              "parentUUID": "45919b6f-cc21-4519-a791-49532b8d3e9c",
+              "uuid": "20e60d52-2640-4fb5-8081-dad37d3238eb",
+              "parentUUID": "5e2fb290-1c19-46a3-936c-c1a3512b67ea",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6d1af506-5db8-4319-baa9-81294bfe5bd3"
+            "20e60d52-2640-4fb5-8081-dad37d3238eb"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2190,
+          "duration": 2343,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -540,7 +540,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "8c0e45a2-d408-43fe-bd7b-aa36e0f4c2be",
+      "uuid": "d89204fc-a380-4cc9-9905-9cfb8b8d6d8c",
       "title": "",
       "fullFile": "cypress/e2e/tc15_place_order.cy.ts",
       "file": "cypress/e2e/tc15_place_order.cy.ts",
@@ -549,7 +549,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0dc5a72f-4c4c-482a-a139-49873c2f88ef",
+          "uuid": "f7f7ce1c-3dff-4c5a-8dde-87adab7fa943",
           "title": "TC15 - Fazer pedido com registro prévio",
           "fullFile": "",
           "file": "",
@@ -560,7 +560,7 @@
               "title": "deve permitir registrar, adicionar produto e prosseguir para checkout",
               "fullTitle": "TC15 - Fazer pedido com registro prévio deve permitir registrar, adicionar produto e prosseguir para checkout",
               "timedOut": null,
-              "duration": 10690,
+              "duration": 11868,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -569,20 +569,20 @@
               "context": null,
               "code": "const products = new productsPage_1.ProductsPage();\nconst signup = new signupPage_1.SignupPage();\nconst cart = new cartPage_1.CartPage();\nconst email = faker_1.faker.internet.email();\nconst password = 'Senha123!';\n// Registrar usuário\nsignup.visit();\nsignup.startSignup('Usuario Pedido', email);\nsignup.fillAccountInformation(password);\ncy.get('a[data-qa=\"continue-button\"]').click();\ncy.contains('Logged in as').should('be.visible');\n// Ir para produtos e abrir a página de detalhe do primeiro produto\nproducts.visit();\n// abrir detalhes do primeiro produto (View Product) para então adicionar ao carrinho de forma unívoca\n// tentar obter o href do link de detalhe e visitar diretamente para evitar problemas de overlay/múltiplos elementos\ncy.get('.product-image-wrapper, .single-products').first().then(($card) => {\n    const href = $card.find('a[href*=\"/product_details/\"]').attr('href');\n    if (href) {\n        // navegar diretamente para a página de detalhe do produto\n        cy.visit(href);\n    }\n    else {\n        // fallback: clicar no primeiro link de detalhe disponível\n        cy.get('a[href*=\"/product_details/\"]').first().click({ force: true });\n    }\n});\n// Na página de detalhe do produto, clicar em Add to cart (único botão nessa página)\n// Aguardar até o botão estar visível, então clicar no primeiro que encontrar\ncy.wait(1000); // dar tempo para a página carregar\ncy.contains(/add to cart/i).should('be.visible').first().click({ force: true });\n// Aguardar o modal de sucesso e então ir para o carrinho\ncy.contains(/added!/i).should('be.visible');\ncy.wait(500); // aguardar animação\n// Visualizar carrinho e proceder\ncy.contains('View Cart').should('be.visible').first().click({ force: true });\ncart.proceedToCheckout();\n// Verifica que chegou à página de checkout (pode pedir confirmação de endereço)\ncy.contains('Address Details').should('be.visible');",
               "err": {},
-              "uuid": "d897fc81-f365-4357-bcf8-ac6377f61081",
-              "parentUUID": "0dc5a72f-4c4c-482a-a139-49873c2f88ef",
+              "uuid": "0a520f59-eb29-42cf-bb69-d6f2abe8b12b",
+              "parentUUID": "f7f7ce1c-3dff-4c5a-8dde-87adab7fa943",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d897fc81-f365-4357-bcf8-ac6377f61081"
+            "0a520f59-eb29-42cf-bb69-d6f2abe8b12b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 10690,
+          "duration": 11868,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
